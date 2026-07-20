@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Para ti ❤️</title>
+
+<style>
+body {
+    margin:0;
+    height:100vh;
+    background: linear-gradient(#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+    text-align:center;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:80%;
+}
+
+button{
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:30px;
+    font-size:18px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💙 Tengo algo para ti</h1>
+
+<img src="foto.jpg">
+
+<p>
+Feliz cumpleaños, mi vida 🎂❤️
+
+Admiro tu fuerza, tu dedicación
+y la persona increíble que eres.
+
+Gracias por cada momento juntos.
+</p>
+
+<button onclick="play()">
+Escuchar nuestra canción 🎵
+</button>
+
+<audio id="music">
+<source src="cancion.mp3">
+</audio>
+
+<script>
+
+function play(){
+document.getElementById("music").play();
+}
+
+</script>
+
+
+</div>
+
+</body>
+</html>
