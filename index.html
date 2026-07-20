@@ -1,87 +1,356 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Para ti vida ❤️</title>
+
+<title>Para ti mi vida ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body {
     margin:0;
-    height:100vh;
-    background: linear-gradient(#ff9a9e,#fad0c4);
+    min-height:100vh;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Arial;
+    font-family:'Arial', sans-serif;
     text-align:center;
+    overflow:hidden;
 }
 
-.card{
+
+.card {
+
     background:white;
     padding:30px;
-    border-radius:20px;
-    width:80%;
+    border-radius:25px;
+    width:85%;
+    max-width:500px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+    animation: aparecer 1.5s ease;
+
 }
 
-button{
+
+
+h1 {
+
+    color:#ff4d6d;
+    font-size:30px;
+
+}
+
+
+
+h2 {
+
+    color:#ff4d6d;
+
+}
+
+
+
+p {
+
+    font-size:18px;
+    line-height:1.6;
+    color:#444;
+
+}
+
+
+
+button {
+
     background:#ff4d6d;
     color:white;
     border:none;
-    padding:15px 25px;
-    border-radius:30px;
+    padding:15px 30px;
+    border-radius:40px;
     font-size:18px;
+    cursor:pointer;
+    margin-top:20px;
+
 }
 
-img{
-    width:100%;
-    border-radius:15px;
+
+
+button:hover {
+
+    transform:scale(1.05);
+
 }
+
+
+
+img {
+
+    width:100%;
+    border-radius:20px;
+    margin-top:20px;
+
+}
+
+
+
+iframe {
+
+    width:100%;
+    height:220px;
+    border-radius:15px;
+    margin-top:15px;
+
+}
+
+
+
+#sorpresa {
+
+    display:none;
+
+}
+
+
+
+.corazon {
+
+    position:absolute;
+    bottom:-50px;
+    font-size:25px;
+    animation:flotar 5s linear infinite;
+
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+
+@keyframes flotar {
+
+    from {
+
+        transform:translateY(0);
+        opacity:1;
+
+    }
+
+    to {
+
+        transform:translateY(-110vh);
+        opacity:0;
+
+    }
+
+}
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="card">
 
-<h1>💙 Tengo algo para ti 💙</h1>
 
-<img src="foto.png">
+<!-- Pantalla inicial -->
+
+<div id="inicio">
+
+
+<h1>
+💙 Tengo algo para ti 💙
+</h1>
+
 
 <p>
-Feliz cumpleaños, mi vida 🎂❤️
 
-Admiro tu fuerza, tu dedicación
-y la persona increíble que eres.
+Preparé un pequeño detalle con mucho cariño.
 
-Gracias por cada momento juntos.
+<br>
+
+Espero que te guste ❤️
+
 </p>
 
-<button onclick="play()">
-Escuchar nuestra canción 🎵
+
+<button onclick="abrirRegalo()">
+
+🎁 Abrir mi regalo
+
 </button>
-
-<iframe 
-    width="100%" 
-    height="200"
-    src="https://www.youtube.com/embed/RDlZ0Za6irxzA"
-    title="Me encantas mi amor"
-    frameborder="0"
-    allow="autoplay; encrypted-media">
-</iframe>
-#<audio id="music">
-#<source src="cancion.mp3">
-#</audio>
-
-<script>
-
-function play(){
-document.getElementById("music").play();
-}
-
-</script>
 
 
 </div>
 
+
+
+
+<!-- Sorpresa -->
+
+
+<div id="sorpresa">
+
+
+<h1>
+Feliz cumpleaños, mi vida 🎂❤️
+</h1>
+
+
+
+<img src="foto.png">
+
+
+
+<p>
+
+Hoy celebro la increíble persona que eres.
+
+<br><br>
+
+Admiro tu fuerza, tu dedicación y la pasión con la que luchas por cada uno de tus sueños.
+
+<br><br>
+
+Gracias por cada sonrisa, cada abrazo y cada momento que compartimos.
+
+<br><br>
+
+Espero que este nuevo año esté lleno de felicidad, sueños cumplidos y muchos momentos juntos.
+
+<br><br>
+
+Te adoro ❤️
+
+</p>
+
+
+
+
+<h2>
+🎵 Nuestra canción
+</h2>
+
+
+<p>
+
+Una canción que me recuerda a ti 💙
+
+</p>
+
+
+
+<iframe
+
+src="https://www.youtube.com/embed/lZ0Za6irxzA?rel=0"
+
+title="Me encantas mi amor"
+
+frameborder="0"
+
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+allowfullscreen>
+
+</iframe>
+
+
+
+<p>
+
+❤️ Gracias por existir ❤️
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+function abrirRegalo(){
+
+
+document.getElementById("inicio").style.display="none";
+
+
+document.getElementById("sorpresa").style.display="block";
+
+
+crearCorazones();
+
+
+}
+
+
+
+function crearCorazones(){
+
+
+for(let i=0;i<40;i++){
+
+
+let corazon=document.createElement("div");
+
+
+corazon.innerHTML="❤️";
+
+
+corazon.className="corazon";
+
+
+corazon.style.left=Math.random()*100+"%";
+
+
+corazon.style.animationDuration=(3 + Math.random()*5)+"s";
+
+
+corazon.style.fontSize=(15 + Math.random()*25)+"px";
+
+
+document.body.appendChild(corazon);
+
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
